@@ -1,15 +1,15 @@
 const express = require("express");
-const coworkers = require("./coworkers/coworkersModel");
+const Coworkers = require("./coworkers/coworkersModel");
 const server = express();
 server.use(express.json());
 
 server.get("/", async (req, res) => {
-  res.status(200).json("Hello World");
+  res.status(200).json("it's working!");
 });
 
-// server.get("/coworkers", async (req, res) => {
-//   const rows = await coworkers.getAll();
-//   res.status(200).json(rows);
-// });
+server.get("/coworkers", async (req, res) => {
+  const rows = await Coworkers.getAll();
+  res.status(200).json(rows);
+});
 
 module.exports = server;
