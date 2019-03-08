@@ -10,7 +10,15 @@ async function insert(coworker) {
 function getAll() {
   return db("coworkers");
 }
+
+function remove(id) {
+  return db("coworkers")
+    .where("id", id)
+    .del();
+}
+
 module.exports = {
   insert,
-  getAll
+  getAll,
+  remove
 };

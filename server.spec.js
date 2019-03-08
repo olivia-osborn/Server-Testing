@@ -7,7 +7,7 @@ describe("server.js", () => {
   //   });
   describe("get /", () => {
     it("should return 200 code", () => {
-      return request(server)
+      request(server)
         .get("/")
         .then(res => {
           expect(res.status).toBe(200);
